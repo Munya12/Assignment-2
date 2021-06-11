@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Enquiries</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="munya">
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <h1>Please feel below for Enquiries</h1>
+            </div>
+            <div class="col-md-6">
+                <form id="form">
+                    <div class="form-group mb-3">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class=" form-group mb-3 ">
+                        <label>Number</label>
+                        <input type="number " name="number " class="form-control " placeholder="Enter Number">
+                    </div>
+                    <div class="form-group mb-3 ">
+                        <label>Email</label>
+                        <input type="email " name="email " class="form-control " placeholder="abc@gmail.com">
+                    </div>
+                    <div class="form-group mb-3 ">
+                        <label>Enquiries</label>
+                        <textarea name="enquiries " rows="8 " cols="80 " class="form-control " placeholder="type your enquiries here"></textarea>
+                    </div>
+                    <div class=" form-group ">
+                        <button type="submit " class="btn btn-primary btn-lg text-white ">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript ">
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('form')
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                alert('Enquiry Complete');
+
+                Array.prototype.forEach.call(e.target.elements, (el) => {
+                    if (el.type == 'button') {
+                        return;
+                    }
+
+                    alert(`${el.name}: ${el.value}`)
+                })
+
+                e.target.reset();
+            })
+        })
+    </script>
+</body>
+
+</html>
